@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: antiquewhite;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #ffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-top: 30px;
+  color: #34495e
+}
+
+p {
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-size: 1.1em;
+}
+
+form {
+  background-color: #f9f9f9;
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 40px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+  font-size: 0.95em;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea{
+  width: calc(100% - 20px);
+  padding: 12px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+form input[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;
+  margin: 20px auto 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+form input[type="submit"]:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0px;
+  background-color: #ffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+table thead th {
+  background-color: #4a69bd;
+  color: white;
+  padding: 15px;
+  text-align: left;
+  font-size: 1.05em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s ease;
+}
+
+table tbody tr:last-child {
+  border-bottom: none;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #edf3eb9d;
+}
+
+table tbody tr:hover {
+  background-color: #e6f2ff;
+}
+
+table td {
+  padding: 15px;
+  vertical-align: center;
+  font-size: 1em;
+}
+
+table td a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 5px 5px;
+  transition: color 0.2s ease;
+  vertical-align: middle;
+}
+
+table td a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.inline-form {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+    font-size: 0.95em;
+    margin: 0 5px;
+    padding: 0;
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+    vertical-align: middle;
+
+}
+
+.delete-button:hover {
+    color: #b02a37;
+    text-decoration: underline;
+}
+
+
+.edit-button {
+  background-color: #007bff;
+  color: white;
+  padding: 23px 23px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-button:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  table,
+  form {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table tbody td {
+    display: block;
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  table tbody td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 45%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+}

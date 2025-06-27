@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Registration System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Client Registration System!</h1>
+        <p>This is our homepage.</p>
+
+        <h2>Register New Client</h2>
+        <form action="{{ url_for('add_client') }}" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Phone:</label><br>
+            <input type="text" id="phone" name="phone"><br><br>
+
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address" rows="4"></textarea><br><br>
+
+            <input type="submit" value="Register Client">
+        </form>
+
+        <h2>Registered Clients</h2>
+        {% if clients %} {#Jinja2 if statement: Only show table if there are clients #}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for client in clients %} {# Jinja2 for loop: Iterate over each client #}
+                <tr>
+                    <td>{{client.id}}</td>
+                    <td>{{client.nome}}</td>
+                    <td>{{client.email}}</td>
+                    <td>{{client.telefone}}</td>
+                    <td>{{client.endereco}}</td>
+                    <td>
+                        <a href="{{ url_for('edit_client', client_id=client.id) }}" class="edit-button">Edit</a> |
+                        <form action="{{ url_for('delete_client', client_id=client.id) }}" method="POST" style="display:inline;">
+                        <button type="submit" class="delete-button">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %} {# Jinja2 else block: If no clients #}
+        <p>No clients registered yet. Start by adding one!</p>
+        {% endif %}
+    </div>
+</body>
+</html>
