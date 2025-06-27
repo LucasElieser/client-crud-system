@@ -19,18 +19,18 @@ This project is a simple web-based system for client registration and management
  - Flash Messages: Provides visual feedback to the user regarding the success of operations or encountered errors.
 
 🛠️ Technologies Used
-
-Backend:
-- Python 3.x
-- Flask (Web Microframework)
-- mysql-connector-python (Python connector for MySQL)
-
-Frontend:
-- HTML5
-- CSS3
-
-Database:
-- MySQL
+  
+   Backend:
+   - Python 3.x
+   - Flask (Web Microframework)
+   - mysql-connector-python (Python connector for MySQL)
+   
+   Frontend:
+   - HTML5
+   - CSS3
+   
+   Database:
+   - MySQL
 
 
 🚀 How to Use
