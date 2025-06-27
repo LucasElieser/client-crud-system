@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Client - {{ client.nome }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Client Details</h1>
+
+        {# Check if a client object was passed and is not None #}
+        {% if client %}
+        <form action="{{ url_for('update_client', client_id=client.id) }}" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" value="{{ client.nome }}" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" value="{{ client.email }}" required><br><br>
+
+            <label for="phone">Phone:</label><br>
+            <input type="text" id="phone" name="phone" value="{{ client.telefone if client.telefone else '' }}"><br><br>
+
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address" rows="4">{{ client.endereco if client.endereco else '' }}</textarea><br><br>
+
+            <input type="submit" value="Update Client">
+            <a href="{{ url_for('index') }}" class="button cancel-button">Cancel</a> {# Added a cancel button/link #}
+        </form>
+        {% else %}
+        <p>Client not found. Please return to the <a href="{{ url_for('index') }}">home page</a>.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
