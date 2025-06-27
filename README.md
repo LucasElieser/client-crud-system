@@ -4,7 +4,7 @@ Client Registration System with Flask and MySQL
 This project is a simple web-based system for client registration and management, developed with Python using the Flask microframework for the backend and HTML/CSS for the frontend. It implements essential CRUD (Create, Read, Update, Delete) operations for managing client records in a MySQL database.
 
 
-🚀 Features:
+🚀 Features
 
  - Client Registration: Add new clients to the database with fields for name, email, phone, and address.
 
